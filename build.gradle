@@ -32,6 +32,9 @@ test {
     useJUnitPlatform()
 }
 
+group 'blairehh'
+archivesBaseName 'lorikeet-core'
+
 publishing {
     repositories {
         maven {
@@ -44,9 +47,10 @@ publishing {
         }
         publications {
             gpr(MavenPublication) {
-                group 'lorikeet-core.com.blairehh'
-                artifactId 'lorikeet-core'
                 from(components.java)
+                pom {
+                    url.set("https://github.com/blairehh/lorikeet-core.git")
+                }
             }
         }
     }
