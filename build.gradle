@@ -7,7 +7,7 @@ plugins {
 sourceCompatibility = 16
 targetCompatibility = 16
 
-group 'com.github.blairehh'
+group 'blairehh'
 
 repositories {
     mavenCentral()
