@@ -32,8 +32,6 @@ test {
     useJUnitPlatform()
 }
 
-group 'blairehh'
-
 publishing {
     repositories {
         maven {
@@ -45,11 +43,12 @@ publishing {
             }
         }
         publications {
-            gpr(MavenPublication) {
+            github(MavenPublication) {
+                groupId = 'blairehh'
+                artifactId = 'lorikeet-core'
+                version = '11111'
+
                 from(components.java)
-                pom {
-                    url.set("https://github.com/blairehh/lorikeet-core.git")
-                }
             }
         }
     }
