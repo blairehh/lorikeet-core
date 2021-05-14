@@ -44,7 +44,7 @@ publishing {
         }
         publications {
             gpr(MavenPublication) {
-                group 'com.github.blairehh'
+                group 'com.blairehh'
                 artifactId 'lorikeet-core'
                 from(components.java)
             }
