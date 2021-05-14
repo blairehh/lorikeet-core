@@ -1,0 +1,32 @@
+name: Deploy
+on:
+  - push
+
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1.0.0
+
+      - name: Setup java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.16
+
+      - name: Compile
+        run: ./gradlew build
+
+      - name: Deploy
+        run: |
+          if [[ $GITHUB_TAG = "refs/tags/v"* ]]; then
+            ./gradlew publish -Pversion=${GITHUB_TAG/refs\/tags\/v/}
+          else
+            ./gradlew publish -Pversion=$(git rev-parse --short HEAD)
+          fi
+        env:
+          GPR_USER: ${{ github.actor }}
+          GPR_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TAG: ${{ github.ref }}
