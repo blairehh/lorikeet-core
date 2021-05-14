@@ -1,11 +1,13 @@
 plugins {
     id 'com.github.johnrengelman.shadow' version '6.0.0'
-    id 'java'
+    id 'java-library'
+    id 'maven-publish'
 }
 
 sourceCompatibility = 16
 targetCompatibility = 16
 
+group 'core.org.loirkeet'
 
 repositories {
     mavenCentral()
@@ -29,4 +31,17 @@ wrapper {
 
 test {
     useJUnitPlatform()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = 'GitHubPackages'
+            url = uri('https://maven.pkg.github.com/budbee')
+            credentials {
+                username = project.findProperty('gpr.user') ?: System.getenv('GPR_USER')
+                password = project.findProperty('gpr.key') ?: System.getenv('GPR_API_KEY')
+            }
+        }
+    }
 }
