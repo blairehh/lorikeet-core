@@ -46,7 +46,6 @@ publishing {
             github(MavenPublication) {
                 groupId = 'blairehh'
                 artifactId = 'lorikeet-core'
-                version = '11111'
 
                 from(components.java)
             }
