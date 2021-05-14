@@ -33,7 +33,6 @@ test {
 }
 
 group 'blairehh'
-archivesBaseName 'lorikeet-core'
 
 publishing {
     repositories {
