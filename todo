@@ -1,0 +1,4 @@
+- rename generic SystemType to KernelType
+- rename project to lorikeet-api
+- move DefaultAxon to another project
+- rename SubsystemReadyReceptor to SubSystemReadyReceptor
