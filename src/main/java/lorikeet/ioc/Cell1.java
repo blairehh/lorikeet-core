@@ -1,6 +1,5 @@
 package lorikeet.ioc;
 
-import lorikeet.DependencyResolver;
 import lorikeet.Axon;
 
 public interface Cell1<ReturnType, Dependency1, SystemType> {
