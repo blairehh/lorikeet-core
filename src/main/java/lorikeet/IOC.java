@@ -1,4 +1,9 @@
-package lorikeet.ioc;
+package lorikeet;
+
+import lorikeet.ioc.Cell0;
+import lorikeet.ioc.Cell1;
+import lorikeet.ioc.Cell2;
+import lorikeet.ioc.Cell3;
 
 public class IOC {
     public static <ReturnType, SystemType> Cell0<ReturnType, SystemType> cell(
