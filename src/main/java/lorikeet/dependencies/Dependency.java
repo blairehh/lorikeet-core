@@ -5,4 +5,5 @@ public interface Dependency {
     void retire(RetireStatus status);
     void check(CheckStatus status);
     long version();
+    String name();
 }
