@@ -1,5 +1,5 @@
 package lorikeet;
 
-public interface Dependency<Type> {
-    Type get();
+public interface Dependency {
+    void start(DependencyStatus status);
 }
