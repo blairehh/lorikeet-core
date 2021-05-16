@@ -1,11 +1,10 @@
 package lorikeet;
 
-
-public class DefaultAxon<KernelType> implements Axon<KernelType> {
+public class TestAxon<KernelType> implements Axon<KernelType> {
 
     private final KernelType kernel;
 
-    public DefaultAxon(KernelType kernel) {
+    public TestAxon(KernelType kernel) {
         this.kernel = kernel;
     }
 
