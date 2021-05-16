@@ -1,3 +1,2 @@
 - rename project to lorikeet-core-api
 - move DefaultAxon to another project
-- make IOC a non static method class
