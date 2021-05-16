@@ -1,9 +1,9 @@
 package lorikeet.dependencies;
 
 public interface Dependency {
-    void init(InitStatus status);
-    void retire(RetireStatus status);
-    void check(CheckStatus status);
+    InitStatus init();
+    RetireStatus retire();
+    CheckStatus check();
     long version();
     String name();
 }

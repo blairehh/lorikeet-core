@@ -1,6 +1,6 @@
 package lorikeet.dependencies;
 
-public interface CheckStatus {
-    void healthy();
-    void unhealthy();
+public sealed interface CheckStatus {
+    record Healthy() implements CheckStatus {}
+    record Unhealthy(Throwable cause) implements CheckStatus {}
 }

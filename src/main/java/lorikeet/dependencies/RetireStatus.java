@@ -1,6 +1,6 @@
 package lorikeet.dependencies;
 
-public interface RetireStatus {
-    void failed(Throwable cause);
-    void stopped();
+public sealed interface RetireStatus {
+    record Stopped() implements RetireStatus {}
+    record Failed(Throwable cause) implements RetireStatus {}
 }

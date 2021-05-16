@@ -1,6 +1,6 @@
 package lorikeet.dependencies;
 
-public interface InitStatus {
-    void ready();
-    void failed(Throwable cause);
+public sealed interface InitStatus {
+    record Ready() implements InitStatus {}
+    record Failed(Throwable cause) implements InitStatus {}
 }
