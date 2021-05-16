@@ -1,17 +1,17 @@
 package lorikeet;
 
 
-public class DefaultAxon<SystemType> implements Axon<SystemType> {
+public class DefaultAxon<KernelType> implements Axon<KernelType> {
 
-    private final SystemType module;
+    private final KernelType kernel;
 
-    public DefaultAxon(SystemType module) {
-        this.module = module;
+    public DefaultAxon(KernelType kernel) {
+        this.kernel = kernel;
     }
 
     @Override
-    public <ReturnType> ReturnType run(Cell<ReturnType, SystemType> cell) {
+    public <ReturnType> ReturnType run(Cell<ReturnType, KernelType> cell) {
         return cell.junction()
-            .invoke(this, this.module);
+            .invoke(this, this.kernel);
     }
 }

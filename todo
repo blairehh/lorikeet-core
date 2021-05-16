@@ -1,4 +1,3 @@
-- rename generic SystemType to KernelType
-- rename project to lorikeet-api
+- rename project to lorikeet-core-api
 - move DefaultAxon to another project
-- rename SubsystemReadyReceptor to SubSystemReadyReceptor
+- make IOC a non static method class

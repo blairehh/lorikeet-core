@@ -1,5 +1,5 @@
 package lorikeet.ioc;
 
-public interface DependencyResolver<DependencyType, SystemType> {
-    DependencyType resolve(SystemType system);
+public interface DependencyResolver<DependencyType, KernelType> {
+    DependencyType resolve(KernelType system);
 }
