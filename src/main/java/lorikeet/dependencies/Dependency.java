@@ -1,9 +1,7 @@
 package lorikeet.dependencies;
 
-public interface Dependency {
+public interface Dependency extends ConstDependency {
     InitStatus init();
     RetireStatus retire();
     CheckStatus check();
-    long version();
-    String name();
 }
