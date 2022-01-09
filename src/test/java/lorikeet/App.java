@@ -1,5 +1,7 @@
 package lorikeet;
 
+import lorikeet.ioc.DependencyResolver;
+
 public class App {
     private final int maxAge;
 

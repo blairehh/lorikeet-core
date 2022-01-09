@@ -1,11 +1,10 @@
 package lorikeet.ioc;
 
 import lorikeet.Axon;
-import lorikeet.DependencyResolver;
 
-public interface Cell5<ReturnType, Dependency1, Dependency2, Dependency3, Dependency4, Dependency5, SystemType> {
+public interface Cell5<ReturnType, Dependency1, Dependency2, Dependency3, Dependency4, Dependency5, KernelType> {
     ReturnType process(
-        Axon<SystemType> axon,
+        Axon<KernelType> axon,
         Dependency1 dependency1,
         Dependency2 dependency2,
         Dependency3 dependency3,
@@ -13,20 +12,20 @@ public interface Cell5<ReturnType, Dependency1, Dependency2, Dependency3, Depend
         Dependency5 dependency5
     );
 
-    default WiredCell<ReturnType, SystemType> requires(
-        DependencyResolver<Dependency1, SystemType> dependency1,
-        DependencyResolver<Dependency2, SystemType> dependency2,
-        DependencyResolver<Dependency3, SystemType> dependency3,
-        DependencyResolver<Dependency4, SystemType> dependency4,
-        DependencyResolver<Dependency5, SystemType> dependency5
+    default WiredCell<ReturnType, KernelType> requires(
+        DependencyResolver<Dependency1, KernelType> dependency1,
+        DependencyResolver<Dependency2, KernelType> dependency2,
+        DependencyResolver<Dependency3, KernelType> dependency3,
+        DependencyResolver<Dependency4, KernelType> dependency4,
+        DependencyResolver<Dependency5, KernelType> dependency5
     ) {
-        return (Axon<SystemType> axon, SystemType system) -> process(
+        return (Axon<KernelType> axon, KernelType kernel) -> process(
             axon,
-            dependency1.resolve(system),
-            dependency2.resolve(system),
-            dependency3.resolve(system),
-            dependency4.resolve(system),
-            dependency5.resolve(system)
+            dependency1.resolve(kernel),
+            dependency2.resolve(kernel),
+            dependency3.resolve(kernel),
+            dependency4.resolve(kernel),
+            dependency5.resolve(kernel)
         );
     }
 }

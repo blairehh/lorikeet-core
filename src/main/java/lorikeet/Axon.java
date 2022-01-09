@@ -1,5 +1,5 @@
 package lorikeet;
 
-public interface Axon<SystemType> {
-    <ReturnType> ReturnType run(Cell<ReturnType, SystemType> cell);
+public interface Axon<KernelType> {
+    <ReturnType> ReturnType run(Cell<ReturnType, KernelType> cell);
 }

@@ -4,8 +4,8 @@ plugins {
     id 'maven-publish'
 }
 
-sourceCompatibility = 16
-targetCompatibility = 16
+sourceCompatibility = 17
+targetCompatibility = 17
 
 repositories {
     mavenCentral()
@@ -25,12 +25,13 @@ test {
 jar.enabled = true
 
 wrapper {
-    gradleVersion = '7.0'
+    gradleVersion = '7.2'
 }
 
 test {
     useJUnitPlatform()
 }
+
 
 publishing {
     repositories {
